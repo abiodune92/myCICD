@@ -1,0 +1,10 @@
+- hosts: host1
+  become: true
+  tasks :
+    - name: install java
+      apt:
+        update_cache: yes
+        name: openjdk-11-jdk
+        state: latest
+    - name: install docker
+      script: docker.sh
